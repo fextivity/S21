@@ -29,6 +29,7 @@ function draw(){
 	if (cntpiece === 28){
 		gamestatus = 1;
 	}
+	
 }
 
 function isvalid(){ // Check the validity of a domino with coordinate (clickx1, clicky1), (clickx2, clicky2);
@@ -180,7 +181,7 @@ function mouseClicked(){ // User interact
 				connectedto[j][i] = 0;
 				chosen[i - 1][j] = 0;
 				chosen[i][j] = 0;
-				let k = board[i - 1][j], l = board[i][j];
+				let k = board[j][i - 1], l = board[j][i];
 				if (k > l){
 					k = k + l;
 					l = k - l;
@@ -189,6 +190,7 @@ function mouseClicked(){ // User interact
 				for (let idx = 0; idx < 28; idx++){
 					if (checkpiece[idx][0] === k && checkpiece[idx][1] === l){
 						usedpiece[idx] = 0;
+						console.log(k + ' ' + l + ' ' + idx);
 						break;
 					}
 				}
@@ -200,7 +202,7 @@ function mouseClicked(){ // User interact
 				connectedto[j][i] = 0;
 				chosen[i][j - 1] = 0;
 				chosen[i][j] = 0;
-				let k = board[i][j - 1], l = board[i][j];
+				let k = board[j - 1][i], l = board[j][i];
 				if (k > l){
 					k = k + l;
 					l = k - l;
@@ -209,6 +211,7 @@ function mouseClicked(){ // User interact
 				for (let idx = 0; idx < 28; idx++){
 					if (checkpiece[idx][0] === k && checkpiece[idx][1] === l){
 						usedpiece[idx] = 0;
+						console.log(k + ' ' + l + ' ' + idx);
 						break;
 					}
 				}
@@ -220,7 +223,7 @@ function mouseClicked(){ // User interact
 				connectedto[j][i] = 0;
 				chosen[i + 1][j] = 0;
 				chosen[i][j] = 0;
-				let k = board[i + 1][j], l = board[i][j];
+				let k = board[j][i + 1], l = board[j][i];
 				if (k > l){
 					k = k + l;
 					l = k - l;
@@ -229,6 +232,7 @@ function mouseClicked(){ // User interact
 				for (let idx = 0; idx < 28; idx++){
 					if (checkpiece[idx][0] === k && checkpiece[idx][1] === l){
 						usedpiece[idx] = 0;
+						console.log(k + ' ' + l + ' ' + idx);
 						break;
 					}
 				}
@@ -240,7 +244,7 @@ function mouseClicked(){ // User interact
 				connectedto[j][i] = 0;
 				chosen[i][j + 1] = 0;
 				chosen[i][j] = 0;
-				let k = board[i][j + 1], l = board[i][j];
+				let k = board[j + 1][i], l = board[j][i];
 				if (k > l){
 					k = k + l;
 					l = k - l;
@@ -249,6 +253,7 @@ function mouseClicked(){ // User interact
 				for (let idx = 0; idx < 28; idx++){
 					if (checkpiece[idx][0] === k && checkpiece[idx][1] === l){
 						usedpiece[idx] = 0;
+						console.log(k + ' ' + l + ' ' + idx);
 						break;
 					}
 				}
@@ -261,6 +266,8 @@ function mouseClicked(){ // User interact
 	if (gamestatus === 1){ // Win
 		if (mouseX >= 400 && mouseX <= 700 && mouseY >= 500 && mouseY <= 600){  // If user click "RESTART"
 			gamestatus = -1;
+			cntpiece = 0;
+			generateboard();
 		}
 		return;
 	}

@@ -30,6 +30,14 @@ function drawboard(){ // Draw the current board
 		text("ANSWER", 30, 195);
 		pop();
 	}
+
+	else{
+		push();
+		textSize(25);
+		textStyle(ITALIC);
+		text("Mọi việc bạn không làm được là do nhân phẩm của bạn và độ rác của waifu bạn - Nguyễn Đình Phúc", 850, 25, 170, 560);
+		pop();
+	}
 	
 	push();
 	strokeWeight(2);
@@ -139,6 +147,7 @@ function begingame(){ // Menu
 
 function wingame(){ // User win
 	push();
+
 	for (let i = 0; i < 10; i++){
 		push();
 		fill(255, rand(100, 135), 0);
@@ -156,6 +165,13 @@ function wingame(){ // User win
 	textStyle(BOLD);
 	textAlign(CENTER, CENTER);
 	text("YOU WIN!!", 0, 200, 1100, 100);
+	pop();
+
+	push();
+	textSize(25);
+	textAlign(CENTER);
+	textStyle(ITALIC);
+	text("Nếu AC thì là do độ khủng chứ nhân phẩm cái gì - Vũ Minh Điềm", 0, 350, 1100, 560);
 	pop();
 
 	push();
