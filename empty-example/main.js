@@ -43,7 +43,7 @@ function isvalid(){ // Check the validity of a domino with coordinate (clickx1, 
 			return false;
 		}
 
-		let cell1 = board[clickx1][clicky1], cell2 = board[clickx2][clicky2];
+		let cell1 = board[clicky1][clickx1], cell2 = board[clicky2][clickx2];
 		if (cell1 > cell2){
 			cell1 = cell1 + cell2;
 			cell2 = cell1 - cell2;
@@ -68,7 +68,7 @@ function isvalid(){ // Check the validity of a domino with coordinate (clickx1, 
 			return false;
 		}
 
-		let cell1 = board[clickx1][clicky1], cell2 = board[clickx2][clicky2];
+		let cell1 = board[clicky1][clickx1], cell2 = board[clicky2][clickx2];
 		if (cell1 > cell2){
 			cell1 = cell1 + cell2;
 			cell2 = cell1 - cell2;

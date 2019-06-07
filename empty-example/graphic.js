@@ -65,7 +65,7 @@ function drawboard(){ // Draw the current board
 				pop();
 				textAlign(CENTER, CENTER);
 				textSize(40);
-				text(board[i][j], 25 + 75 * i + 5, 25 + 75 * j + 5, 75, 75); // + 5 to fix text's position
+				text(board[j][i], 25 + 75 * i + 5, 25 + 75 * j + 5, 75, 75); // + 5 to fix text's position
 			}
 		}
 	}
